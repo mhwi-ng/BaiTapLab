@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8e3e8; /* Nền hồng nhạt */
+            color: #333; /* Màu chữ tối */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #d5006d; /* Màu hồng đậm */
+        }
+        form {
+            background-color: #ffffff; /* Nền trắng */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #d5006d; /* Viền hồng đậm */
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #d5006d; /* Nền hồng đậm */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #c40059; /* Màu hồng tối hơn khi hover */
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #d5006d; /* Màu hồng đậm */
+        }
+    </style>
+</head>
+<body>
+    <h1>Iris Classifier</h1>
+    <form action="/predict" method="POST">
+        <label for="sepal_length">Sepal Length:</label>
+        <input type="text" name="sepal_length" required>
+
+        <label for="sepal_width">Sepal Width:</label>
+        <input type="text" name="sepal_width" required>
+
+        <label for="petal_length">Petal Length:</label>
+        <input type="text" name="petal_length" required>
+
+        <label for="petal_width">Petal Width:</label>
+        <input type="text" name="petal_width" required>
+
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+        <div class="result">Predicted Class: {{ prediction }}</div>
+    {% endif %}
+</body>
+</html>
