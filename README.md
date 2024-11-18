@@ -1,3 +1,8 @@
+# Thầy ơi File project em nặng quá tập train hơn 25mb nó không cho em push lên T_T
+
+
+
+
 # Học Máy Ứng Dụng
 
 1. **Công Nghệ Sử Dụng Lab2**:
